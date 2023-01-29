@@ -16,58 +16,47 @@ const {
 const { Event, useEvent } = require('@agile-ts/event');
 const { toast } = require('react-toastify');
 
-const githubOrgUrl = 'https://github.com/agile-ts';
-const domain = 'https://agile-ts.org';
+const githubOrgUrl = 'https://github.com/dom-assistant';
+const domain = 'https://dom-assistant.ru';
 const npmOrgUrl = 'https://www.npmjs.com/package/@agile-ts';
+const dockerHubUrl = 'https://hub.docker.com/r/domassistant';
 
 const customFields = {
   copyright: `Made with  💜 by <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/DevBenno">BennoDev</a> and <a target="_blank" rel="noopener noreferrer" href="https://github.com/agile-ts/agile/graphs/contributors">these awesome people</a>`,
   meta: {
-    title: 'An atom based state manager for JavaScript apps.',
+    title: 'Умный дом с открытым исходным кодом, ориентированный на конфиденциальность',
     image: '/img/meta.png',
     description:
-      'An atom based global State and Logic Library implemented in Typescript, ' +
-      'offering a reimagined API that focuses on developer experience. ' +
-      'AgileTs is a more straightforward alternative to Redux ' +
-      'and allows you to easily manage your application States in React, Vue and plain Javascript.',
+      'Dom Assistant — это современный инструмент, ориентированный на конфиденциальность. ' +
+      'Программное обеспечение для домашней автоматизации с открытым исходным кодом, которое работает где угодно.',
     color: '#6c69a0',
     keywords: [
-      'state management',
-      'react',
-      'state',
-      'react state management',
-      'react native state management',
-      'react state',
-      'typescript',
-      'react state management without redux',
-      'vue',
-      'webdev',
-      'redux',
-      'recoil',
-      'mobx',
-      'javascript',
-      'software',
-      'coding',
-      'development',
-      'engineering',
+      'dom assistant',
+      'home assistant',
+      'умный дом open source',
+      'smart home open source',
+      'умный дом',
+      'smart home',
+      'iot',
     ],
   },
   domain,
   githubOrgUrl,
-  githubUrl: `${githubOrgUrl}/agile`,
-  githubDocsUrl: `${githubOrgUrl}/documentation`,
+  githubUrl: `${githubOrgUrl}/core`,
+  githubDocsUrl: `${githubOrgUrl}/website`,
   npmCoreUrl: `${npmOrgUrl}/core`,
   discordUrl: `https://discord.gg/T9GzreAwPH`,
   stackoverflowUrl: 'https://stackoverflow.com/questions/tagged/agile-ts',
   twitterUrl: 'https://twitter.com/AgileFramework',
   redditUrl: 'https://www.reddit.com/r/AgileTs/',
+  dockerHubUrl: `${dockerHubUrl}/dom-assisatnt`,
   version: '0.0.1',
   announcementBar: {
     id: 'announcement',
     content: [
-      `❓ If you have any questions, don't hesitate to join our <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/T9GzreAwPH">Community Discord</a> ️`,
-      `🎉 If you like AgileTs, give us a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/agile-ts/agile">GitHub</a>`,
-      `⏰ If you want to stay update to date, follow use on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/AgileTypescript">Twitter</a>`,
+      `❓ Если у вас есть вопросы, задайте на нашем  <a target="_blank" rel="noopener noreferrer" href="https://forum.dom-assistant.ru">Форуме</a> ️`,
+      `🎉 Если вам нравится использовать наше приложение, поставьте звездочку на нашем <a target="_blank" rel="noopener noreferrer" href="https://github.com/dom-assistant/core">GitHub</a>`,
+      `⏰ Следите за нашими новостями в нашем  <a target="_blank" rel="noopener noreferrer" href="https://t.me/domassistant">Телеграмме</a>`,
     ],
     random: false,
     interval: 100000,
@@ -91,8 +80,8 @@ const customFields = {
 };
 
 const config = {
-  title: 'AgileTs',
-  tagline: 'AgileTs is a global, flexible, spacy State and Logic Library',
+  title: 'Dom Assistant',
+  tagline: 'Сверхстабильное программное обеспечение, разработанное для повышения производительности и безопасности.',
   url: customFields.domain,
   baseUrlIssueBanner: false,
   baseUrl: '/',
@@ -136,29 +125,29 @@ const config = {
       items: [
         // left
         {
-          label: 'Get Started',
+          label: 'Начало работы',
           position: 'left',
           items: [
             {
-              label: 'Installation',
+              label: 'Установка',
               to: '/docs/installation/',
             },
             {
-              label: 'React',
-              to: '/docs/quick-start/react/',
+              label: 'Интеграции',
+              to: '/docs/integrations/',
             },
             {
-              label: 'Style Guide',
-              to: '/docs/style-guide/',
+              label: 'Api',
+              to: '/docs/api/',
             },
             {
-              label: 'Examples',
-              to: '/docs/examples/',
+              label: 'Разработка',
+              to: '/docs/development/',
             },
           ],
         },
         {
-          label: 'Community',
+          label: 'Сообщество',
           position: 'left',
           items: [
             {
@@ -166,27 +155,45 @@ const config = {
               href: customFields.githubUrl,
             },
             {
-              label: 'Discord',
+              label: 'Telegram',
               href: customFields.discordUrl,
             },
             {
-              label: 'Stack Overflow',
+              label: 'Форум',
               href: customFields.stackoverflowUrl,
             },
             {
-              label: 'Twitter',
-              href: customFields.twitterUrl,
-            },
-            {
-              label: 'Reddit',
-              href: customFields.redditUrl,
+              label: 'Блог',
+              to: '/blog/',
             },
           ],
         },
         {
-          label: 'Documentation',
+          label: 'Документация',
           position: 'left',
           to: 'docs/introduction',
+        },
+        {
+          label: 'Заказать',
+          position: 'left',
+          items: [
+            {
+              label: 'Проект',
+              to: '/docs/installation/',
+            },
+            {
+              label: 'Монтаж',
+              to: '/docs/integrations/',
+            },
+            {
+              label: 'Программирование',
+              to: '/docs/api/',
+            },
+            {
+              label: 'Разработку',
+              to: '/docs/development/',
+            },
+          ],
         },
       ],
     },
@@ -195,40 +202,36 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Документация',
           items: [
             {
-              label: 'Get Started',
-              to: 'docs/introduction',
+              label: 'Плюс',
+              to: 'docs/plus/intro',
             },
             {
-              label: 'Examples',
-              to: 'docs/examples',
+              label: 'Оборудование',
+              to: 'docs/hardware',
             },
             {
-              label: 'React',
-              to: 'docs/quick-start/react',
+              label: 'Сцены',
+              to: 'docs/scenes/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Сообщество',
           items: [
             {
               label: 'GitHub',
               href: customFields.githubUrl,
             },
             {
-              label: 'Stack Overflow',
+              label: 'Telegram',
               href: customFields.stackoverflowUrl,
             },
             {
-              label: 'Discord',
+              label: 'Форум',
               href: customFields.discordUrl,
-            },
-            {
-              label: 'Twitter',
-              href: customFields.twitterUrl,
             },
           ],
         },
@@ -236,15 +239,15 @@ const config = {
           title: 'More',
           items: [
             {
-              label: 'Privacy Policy',
+              label: 'Политика конфиденциальности',
               to: '/legal/privacy-notice',
             },
             {
-              label: 'Cookie Policy',
+              label: 'Cookie политика',
               to: '/legal/cookie-notice',
             },
             {
-              label: 'Blog',
+              label: 'Блог',
               to: '/blog/',
             },
           ],
