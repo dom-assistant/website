@@ -5,7 +5,7 @@
   width: 95%;
   max-width: var(--ifm-container-width);
   margin: 0 auto;
-  padding: 12rem 0;
+  padding: 5rem 0;
 }
 
 @media (max-height: 800px) and (max-width: 768px) {

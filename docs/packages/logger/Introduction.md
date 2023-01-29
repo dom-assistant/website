@@ -78,7 +78,7 @@ Some of its basic capabilities are to:
 - ### 🎨 style log messages `(color, font-weight)`
   Style log messages to make it easier to distinguish between different log types
   and recognise important log messages more quickly.
-  ![Log Custom Styles Example](../../../static/img/docs/logger_example.png)
+
 
 - ### 🔨 customize log messages `(prefix, timestamp)`
   Customize log messages to identify searched logs more swiftly.
@@ -252,7 +252,6 @@ Logs that have no condition/tag are always logged.
 
 Whether we can apply custom `css` styles to the log messages.
 
-![Log Custom Styles Example](../../../static/img/docs/logger_example.png)
 
 For example, AgileTs Logs are by default purple.
 

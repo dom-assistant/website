@@ -1,7 +1,7 @@
 .Container {
   background-color: var(--ifm-color-background-2);
   transform: skewY(3deg);
-  padding: 8rem 0;
+  padding: 2rem 0;
 }
 
 .Content {

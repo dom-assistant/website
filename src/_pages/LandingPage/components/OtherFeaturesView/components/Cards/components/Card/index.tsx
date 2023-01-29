@@ -35,7 +35,7 @@ const Card: React.FC<Props> = (props) => {
       <PlainButton
         className={styles.MoreButton}
         to={data.to}
-        name={'Learn more'}
+        name={'Узнать больше'}
       />
     </div>
   );

@@ -15,12 +15,12 @@ const HeaderView: React.FC = () => {
   const { windowHeight } = useWindowSize();
   const [toTypeWords] = useState(
     shuffle([
-      'simple',
-      'straightforward',
-      'understandable',
-      'boilerplate free',
-      'flexible',
-      'fun',
+      'просто',
+      'стабильно',
+      'зашифровано',
+      'надежно',
+      'открытый код',
+      'удобно',
     ])
   );
 
@@ -30,7 +30,7 @@ const HeaderView: React.FC = () => {
       style={{ height: windowHeight > 800 ? windowHeight : undefined }}>
       <div>
         <h1 className={styles.HeaderTitle}>
-          State Management <span className={styles.SeparatorText}>made</span>
+          Умный дом <span className={styles.SeparatorText}>Dom Assistant</span> это
         </h1>
         <Spacer height={20} />
         <HeaderTyper
@@ -46,7 +46,7 @@ const HeaderView: React.FC = () => {
           <PrimaryButton
             className={styles.GetStartedButton}
             to={'/docs/introduction'}>
-            GET STARTED
+            Начать
           </PrimaryButton>
           <GithubButton
             className={styles.GithubButton}
@@ -54,7 +54,7 @@ const HeaderView: React.FC = () => {
           />
         </div>
       </div>
-      <Astronaut className={styles.AstronautImage} />
+      <Astronaut className={styles.AstronautImage} /> 
       {windowHeight > 900 && windowHeight < 1200 && <MouseScroller />}
     </div>
   );

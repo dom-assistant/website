@@ -9,72 +9,68 @@ import PlainButton from '../../../../components/buttons/PlainButton';
 const sections: SectionInterface[] = [
   {
     code: `
-const MY_STATE = createState("Jeff"); // <-
-MY_STATE.set("Frank"); // Update State value
+curl -sSL https://get.docker.com | sh // Установка Docker
+sudo usermod -aG docker user // Добавьте user в группу docker
     `,
     codeWithComment: `
 // Instantiate a global States with a single line of code
 const MY_STATE = createState("Jeff"); // <-
 MY_STATE.set("Frank"); // Update State value
     `,
-    title: 'Create State',
-    description: 'Instantiate a global State with a single line of code.',
+    title: 'Установите Docker',
+    description: 'Если Docker установлен, пропустите шаг',
     icon: 'zap',
   },
   {
     code: `
-// MyComponent.whatever
-const myState = useAgile(MY_STATE);
+// Запуск Dom Assistant в часовом поясе Москвы и на порту 80
+docker run -d \
+--log-driver json-file \
+--log-opt max-size=10m \
+--cgroupns=host \
+--restart=always \
+--privileged \
+--network=host \
+--name gladys \
+-e NODE_ENV=production \
+-e SERVER_PORT=80 \
+-e TZ=Europe/Moscow \
+-e SQLITE_FILE_PATH=/var/lib/gladysassistant/gladys-production.db \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /var/lib/gladysassistant:/var/lib/gladysassistant \
+-v /dev:/dev \
+-v /run/udev:/run/udev:ro \
+domassistant/dom-assistant:latest
     `,
     codeWithComment: `
 // Dynamically bind State to UI-Components for reactivity
 const myState = useAgile(MY_STATE);
     `,
-    title: 'Subscribe UI-Component',
-    description: 'Dynamically bind State to UI-Components for reactivity.',
+    title: 'Запуск Dom Assistant',
+    description: 'Автоматическая установка последнего стабильного релиза',
     icon: 'repeat',
   },
   {
     code: `
-MY_STATE.persist();
+//Запуск Watchtower
+docker run -d \
+--name watchtower \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+containrrr/watchtower \
+--cleanup --include-restarting
     `,
     codeWithComment: `
-// Permanently store State in the appropriate local Storage
-MY_STATE.persist();
+    docker run -d \
+    --name watchtower \
+    --restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower \
+    --cleanup --include-restarting
     `,
-    title: 'Persist State',
-    description: 'Permanently store State in the appropriate local Storage.',
+    title: 'Авто обновления',
+    description: 'Вы можете использовать Watchtower для автоматического обновления Dom-Assistant, когда будет доступна новая версия. Для этого запустите контейнер Watchtower.',
     icon: 'server',
-  },
-  {
-    code: `
-const USERS = createCollection(); // <-
-USERS.collect({id: 1, name: "Jeff"}, ['teamA']);
-    `,
-    codeWithComment: `
-// Create a dynamic and reactive set of States
-const USERS = createCollection(); // <-
-USERS.collect({id: 1, name: "Jeff"}, ['teamA']);
-    `,
-    title: 'Collection',
-    description: 'Easily create a dynamic and reactive set of States.',
-    icon: 'users',
-  },
-  {
-    code: `
-const IS_AUTH = createComputed(() => {
-   return AUTH_TOKEN.exists && EXPIRATION_TIME.value > 0;
-});
-    `,
-    codeWithComment: `
-// Compute State depending on other States  
-const IS_AUTH = createComputed(() => {
-   return AUTH_TOKEN.exists && EXPIRATION_TIME.value > 0;
-});
-    `,
-    title: 'Computed State',
-    description: 'Compute State depending on other States.',
-    icon: 'edit',
   },
 ];
 
@@ -83,19 +79,18 @@ const StraightforwardView: React.FC = () => {
     <div className={styles.Container}>
       <div className={styles.Content}>
         <div className={styles.HeaderContainer}>
-          <h3 className={styles.Tagline}>Why choose us?</h3>
-          <h1 className={styles.Title}>Straightforward</h1>
+          <h3 className={styles.Tagline}>Почему нас выбирают?</h3>
+          <h1 className={styles.Title}>Простота и надежность</h1>
           <Spacer height={20} />
           <p className={styles.Description}>
-            AgileTs saves you the hassle of creating boilerplate code and offers
-            a powerful API that makes your life easier.
+            Один раз бесплатно установив платформу Dom Assistant вы избавляете себя от обновлений и контроля работоспособности.
           </p>
         </div>
         <Spacer height={60} />
         <SectionScroller sections={sections} startIndex={0} />
         <PlainButton
           to={'docs/introduction'}
-          name={'Learn more'}
+          name={'Узнать больше'}
           className={styles.LearnMoreButton}
         />
       </div>
