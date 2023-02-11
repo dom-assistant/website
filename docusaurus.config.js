@@ -91,6 +91,18 @@ const config = {
   projectName: 'https://github.com/agile-ts/agile/',
   themes: ['@docusaurus/theme-live-codeblock'],
   scripts: [{ src: 'https://snack.expo.io/embed.js', async: true }], // https://github.com/expo/snack/blob/main/docs/embedding-snacks.md
+  i18n: {
+    defaultLocale: "ru",
+    locales: ["en", "ru"],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      ru: {
+        label: "Русский",
+      },
+    },
+  },
   plugins: [
     'docusaurus-plugin-sass',
     // @docusaurus/plugin-google-analytics (Not necessary because it automatically gets added)
