@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AutoTyper } from './AutoTyper';
 import styles from './styles.module.css';
 import clsx from 'clsx';
+import Translate, { translate } from "@docusaurus/Translate";
 
 export type Props = {
   words?: string[];
