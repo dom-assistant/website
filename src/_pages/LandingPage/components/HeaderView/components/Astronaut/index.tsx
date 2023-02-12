@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import AstronautDark from './astronauts/AstronautDark';
 import AstronautLight from './astronauts/AstronautLight';
+import Translate, { translate } from "@docusaurus/Translate";
 
 type Props = { className?: string };
 
@@ -66,7 +67,7 @@ const Astronaut: React.FC<Props> = (props) => {
           <AstronautLight onMouseEnter={onMouseEnter} />
         )}
       </animated.div>
-      <p className={styles.Text}>Ткните меня 👆, чтобы изменить мой цвет.</p>
+      <p className={styles.Text}><Translate id="home.austronaut">Poke me 👆 to mutate my color State.</Translate></p>
     </div>
   );
 };

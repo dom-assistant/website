@@ -9,18 +9,19 @@ import { useWindowSize } from '../../../../hooks/useWindowSize';
 import MouseScroller from './components/MouseScroller';
 import Astronaut from './components/Astronaut';
 import { shuffle } from '../../../../utils';
+import Translate, { translate } from "@docusaurus/Translate";
 
 const HeaderView: React.FC = () => {
   const { siteConfig } = useDocusaurusContext();
   const { windowHeight } = useWindowSize();
   const [toTypeWords] = useState(
     shuffle([
-      'просто',
-      'стабильно',
-      'зашифровано',
-      'надежно',
-      'открытый код',
-      'удобно',
+      'simple',
+      'stable',
+      'encrypted',
+      'secure',
+      'open source',
+      'easy',
     ])
   );
 
@@ -30,7 +31,7 @@ const HeaderView: React.FC = () => {
       style={{ height: windowHeight > 800 ? windowHeight : undefined }}>
       <div>
         <h1 className={styles.HeaderTitle}>
-          Умный дом <span className={styles.SeparatorText}>Dom Assistant</span> это
+        <Translate id="home.title" description="The home page title">Smart home </Translate><span className={styles.SeparatorText}> Dom Assistant</span>
         </h1>
         <Spacer height={20} />
         <HeaderTyper
@@ -40,7 +41,7 @@ const HeaderView: React.FC = () => {
           defaultText={toTypeWords[0] || 'simple'}
         />
         <Spacer height={50} />
-        <p className={styles.DescriptionText}>{siteConfig.tagline}</p>
+        <p className={styles.DescriptionText}><Translate id="home.tagline">{siteConfig.tagline}</Translate></p>
         <Spacer height={50} />
         <div className={styles.ButtonContainer}>
           <PrimaryButton

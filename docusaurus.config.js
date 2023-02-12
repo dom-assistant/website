@@ -54,7 +54,7 @@ const customFields = {
   announcementBar: {
     id: 'announcement',
     content: [
-      `❓ Если у вас есть вопросы, задайте на нашем  <a target="_blank" rel="noopener noreferrer" href="https://forum.dom-assistant.ru">Форуме</a> ️`,
+      `<Translate id="home.anonce1">❓ If you have any questions, don't hesitate to join our  <a target="_blank" rel="noopener noreferrer" href="https://forum.dom-assistant.ru">Forum</a></Translate>`,
       `🎉 Если вам нравится использовать наше приложение, поставьте звездочку на нашем <a target="_blank" rel="noopener noreferrer" href="https://github.com/dom-assistant/core">GitHub</a>`,
       `⏰ Следите за нашими новостями в нашем  <a target="_blank" rel="noopener noreferrer" href="https://t.me/domassistant">Телеграмме</a>`,
     ],
@@ -81,7 +81,7 @@ const customFields = {
 
 const config = {
   title: 'Dom Assistant',
-  tagline: 'Сверхстабильное программное обеспечение, разработанное для повышения производительности и безопасности.',
+  tagline: 'A super-stable software, designed for performance & security.',
   url: customFields.domain,
   baseUrlIssueBanner: false,
   baseUrl: '/',
@@ -91,6 +91,18 @@ const config = {
   projectName: 'https://github.com/agile-ts/agile/',
   themes: ['@docusaurus/theme-live-codeblock'],
   scripts: [{ src: 'https://snack.expo.io/embed.js', async: true }], // https://github.com/expo/snack/blob/main/docs/embedding-snacks.md
+  i18n: {
+    defaultLocale: "ru",
+    locales: ["en", "ru"],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      ru: {
+        label: "Русский",
+      },
+    },
+  },
   plugins: [
     'docusaurus-plugin-sass',
     // @docusaurus/plugin-google-analytics (Not necessary because it automatically gets added)
@@ -125,7 +137,7 @@ const config = {
       items: [
         // left
         {
-          label: 'Начало работы',
+          label: 'Начало',
           position: 'left',
           items: [
             {
@@ -169,7 +181,7 @@ const config = {
           ],
         },
         {
-          label: 'Документация',
+          label: 'Docs',
           position: 'left',
           to: 'docs/introduction',
         },
@@ -194,6 +206,11 @@ const config = {
               to: '/docs/development/',
             },
           ],
+
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
         },
       ],
     },
