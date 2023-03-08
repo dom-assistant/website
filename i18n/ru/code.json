@@ -12,7 +12,7 @@
         "description": "austronaut"
       },
     "home.anonce1": {
-      "message": "❓ Если у вас есть вопросы, задайте на нашем  <a target="_blank" rel="noopener noreferrer" href="https://forum.dom-assistant.ru">Форуме</a>",
+      "message": "❓ Если у вас есть вопросы, задайте на нашем  <a target='_blank' rel='noopener noreferrer' href='https://forum.dom-assistant.ru'>Форуме</a>",
       "description": "Anonce 1"
     }
   }
